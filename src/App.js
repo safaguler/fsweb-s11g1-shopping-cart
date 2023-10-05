@@ -9,29 +9,22 @@ import ShoppingCart from "./components/ShoppingCart";
 import CartContextProvider from "./contexts/CartContext";
 import ProductContextProvider from "./contexts/ProductContext";
 function App() {
-  
-  const [cart, setCart] = useState([]);
-
-  const addItem = (item) => {
-    // verilen itemi sepete ekleyin
-  };
-
   return (
     <div className="App">
       <CartContextProvider>
-      <Navigation  />
+        <Navigation />
 
-      {/* Routelar */}
-      <main className="content">
-        <ProductContextProvider>
-        <Route exact path="/">
-          <Products />
-        </Route>
-        </ProductContextProvider>
-        <Route path="/cart">
-          <ShoppingCart />
-        </Route>
-      </main>
+        {/* Routelar */}
+        <main className="content">
+          <ProductContextProvider>
+            <Route exact path="/">
+              <Products />
+            </Route>
+          </ProductContextProvider>
+          <Route path="/cart">
+            <ShoppingCart />
+          </Route>
+        </main>
       </CartContextProvider>
     </div>
   );
